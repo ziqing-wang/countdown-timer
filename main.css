@@ -1,0 +1,197 @@
+:root {
+    --color-grayish-blue: hsl(237, 18%, 59%);
+    --color-red-soft: hsl(345, 95%, 68%);
+    --color-desaturated-blue-dark: hsl(236, 21%, 26%);
+    --color-blue-dark-1: hsl(235, 16%, 14%);
+    --color-blue-dark-2: hsl(234, 17%, 12%);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    min-height: 100vh;
+    color: #fff;
+    background: url(images/bg-stars.svg), linear-gradient(var(--color-blue-dark-2), var(--color-blue-dark-1));
+}
+
+.countdown {
+    text-align: center;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight: 700;
+}
+
+.countdown-title {
+    font-size: 1.4rem;
+    letter-spacing: 0.7rem;
+    padding-top: 5rem;
+}
+
+.timer-text {
+    color: var(--color-grayish-blue);
+    letter-spacing: 0.25rem;
+    font-size: 0.75rem;
+    padding: 2rem 0;
+    margin: 0;
+}
+
+/* Timer section*/
+.countdown-timer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.timer-container {
+    width: 9rem;
+    margin: 1rem;
+}
+
+.timer-container .digital {
+    width: 9rem;
+    height: 9rem;
+    border-radius: 0.5rem;
+    color: var(--color-red-soft);
+    background-color: var(--color-desaturated-blue-dark);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 9rem;
+    font-size: 5rem;
+    position: relative;
+    box-shadow: 0 0.75rem var(--color-blue-dark-2);
+    overflow: hidden;
+}
+
+/* Middle 2 black circles */
+.timer-container .digital .circle {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: var(--color-blue-dark-2);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.digital .circle.left {
+    left: -0.5rem;
+}
+
+.digital .circle.right {
+    right: -0.5rem;
+}
+
+/* Timer Flip */
+.timer-container .digital:before,
+.timer-container .digital:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+.timer-container .digital:before {
+    top: 0;
+    bottom: 50%;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border-bottom: solid 1px var(--color-grayish-blue);
+    background: var(--color-blue-dark-2);
+    opacity: 0.3;
+}
+
+.timer-container .digital:after {
+    top: 50%;
+    bottom: 0;
+    border-radius: 0 0.5rem 0.5rem;
+}
+
+
+.footer {
+    width: 100vw;
+    height: 20%;
+    background: url(images/pattern-hills.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+svg.icons {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    font-size: 1.75rem;
+    fill: var(--color-grayish-blue);
+}
+
+svg.icons:hover {
+    fill: var(--color-red-soft);
+}
+
+@media(max-width: 768px) {
+
+    /* Font size */
+    .countdown-title {
+        font-size: 1.4rem;
+        margin: 4rem 2rem 0;
+        letter-spacing: 0.5rem;
+    }
+
+    .timer-text {
+        font-variant-caps: all-small-caps;
+        font-size: 0.25rem;
+        padding: 1rem 0;
+    }
+
+    /* Middle 2 black circles */
+    .timer-container .digital .circle {
+        width: 0.5rem;
+        height: 0.5rem;
+    }
+
+    .digital .circle.left {
+        left: -0.25rem;
+    }
+
+    .digital .circle.right {
+        right: -0.2rem;
+    }
+
+    /* Count down timer */
+
+    .timer-container {
+        width: 4.5rem;
+        margin: 0.45rem;
+    }
+
+    .timer-container .digital {
+        width: 4.5rem;
+        height: 4.5rem;
+        text-align: center;
+        vertical-align: middle;
+        line-height: 4.5rem;
+        font-size: 2rem;
+        position: relative;
+        box-shadow: 0 0.75rem var(--color-blue-dark-2);
+        overflow: hidden;
+    }
+
+}
