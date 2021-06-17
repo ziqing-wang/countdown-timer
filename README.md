@@ -15,4 +15,4 @@ Users are able to:
 - See a live countdown timer that ticks down every second (start the count at 14 days)
 
 
-- Live site [Netlify](https://www.netlify.com/)
+- Live site [https://countdown-timer-without-filp.netlify.app/](https://countdown-timer-without-filp.netlify.app/)
