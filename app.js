@@ -8,20 +8,19 @@ const formatTime = (number) => {
     else return number;
 }
 
-const timeInit = () => {
-    // Update the time 
-    dayEl.innerText = 00;
-    hoursEl.innerText = 00;
-    minutesEl.innerText = 00;
-    secondsEl.innerText = 00;
+const init = () => {
+    dayEl.innerText = 0;
+    hoursEl.innerText = 0;
+    minutesEl.innerText = 0;
+    secondsEl.innerText = 0;
 }
 
 const countdown = () => {
-    const deadline = new Date('2021 June 15, 00:00:00').getTime();
+    const deadline = new Date('2021 June 31, 00:00:00').getTime();
     const now = new Date().getTime();
     const gap = deadline - now;
 
-    if (gap === 0) timeInit();
+    if (gap <= 0) { init(); return; }
 
     // Define the time 
     const second = 1000;
